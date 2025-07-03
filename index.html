@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardian Wallet</title>
+
+  <link rel="shortcut icon" href="./favicon.png" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="header" data-header>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="./assets/images/logo.png" width="32" height="32" alt="Logo da Guardian Wallet">
+        <strong>Guardian</strong><span class="wallet-text"> Wallet</span>
+      </a>
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li class="navbar-item"><a href="#" class="navbar-link active" data-nav-link>Página Inicial</a></li>
+          <li class="navbar-item"><a href="#" class="navbar-link" data-nav-link>Crie sua carteira</a></li>
+             <li class="navbar-item"><a href="#" class="navbar-link" data-nav-link>Assinaturas</a></li>
+          <li class="navbar-item"><a href="#" class="navbar-link" data-nav-link>Central de ajuda</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle-btn" aria-label="Alternar menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+      <a href="http://localhost:5173" class="btn btn-outline">Carteira</a>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <section class="section hero" aria-label="hero" data-section>
+        <div class="container">
+          <div class="hero-content">
+
+            <h1 class="h1 hero-title">Seu primeiro passo rumo ao futuro.</h1>
+
+            <p class="hero-text">
+              Na Guardian Wallet, descomplicamos o mundo cripto para você começar a aprender e investir com segurança.
+            </p>
+
+                 <img src="./assets/images/pessoa1.png" width="420" height="420" alt="Womenwithaphone" class="persona-icon">
+
+
+            <h2 class="h2" style="margin-top: 25px;"><span class="holographic-orange-faded">O que são</span> <span class="holographic-orange-highlight">Criptomoedas?</span></h2>
+            
+            <p class="section-text" style="text-align: center;">
+              Pense nas criptomoedas como <span class="text-highlight">dinheiro 100% digital</span></span>
+          
+            <img src="./assets/images/liberdade.png" alt="Autonomia" class="topic-icon icon-autonomia icon-autonomia-ajuste">
+            <h3 class="h3"><span class="holographic-orange-highlight">AUTONOMIA</span></h3>
+            <p class="section-text">
+        A grande diferença é que elas não são controladas por nenhum banco ou governo. Por isso, são descentralizadas, oferecendo a você mais liberdade para usar <br> no mundo todo.
+            </p>
+
+            <img src="./assets/images/seguranca.png" alt="Segurança" class="topic-icon">
+            <h3 class="h3"><span class="holographic-orange-highlight">SEGURANÇA</span></h3>
+            <p class="section-text">
+          Sua segurança vem da criptografia, uma tecnologia que age como um código secreto e super-seguro para proteger cada transação.
+            </p>
+
+            <img src="./assets/images/blockchain.png" alt="Blockchain" class="topic-icon">
+            <h3 class="h3"><span class="holographic-orange-highlight">BLOCKCHAIN</span></h3>
+            <p class="section-text">
+        Todas as movimentações ficam registradas em um "livro-caixa" público e à prova de falsificação, conhecido como blockchain, garantindo total transparência e confiabilidade.
+            </p>
+
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section coin-carousel-section" aria-label="carrossel de criptomoedas" data-section id="carousel-section">
+        <div class="container">
+          <h2 class="h2 holographic-orange-highlight" style="margin-bottom: 5px;">Criptomoedas</h2>
+          <p class="section-text" style="text-align: center; margin-top: 0; margin-bottom: 20px;">As mais populares</p>
+
+          <div class="coin-carousel">
+            <button class="carousel-btn prev-btn" aria-label="Moeda anterior">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <div class="carousel-content">
+              <figure class="coin-illustration">
+                <div class="ethereum-icon-wrapper" id="coin-icon-wrapper">
+                  </div>
+              </figure>
+              <div class="coin-description" id="coin-info-wrapper">
+                <h2 class="h2 coin-title">
+                  <span id="coin-name"></span>
+                  <span id="coin-rank" class="rank"></span>
+                </h2>
+                <p id="coin-text" class="coin-text"></p>
+              </div>
+            </div>
+            <button class="carousel-btn next-btn" aria-label="Próxima moeda">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section instruction" aria-label="instruções" data-section id="instruction-section">
+        <div class="container">
+          <p class="section-te vxt instruction-intro">
+
+<lord-icon
+    id="lordicon-crypto-journey" src="https://cdn.lordicon.com/ohcuigqh.json"
+    trigger="hover" colors="primary:#ffffff,secondary:#eeaa66"
+    style="width:150px;height:150px; display: block; margin: 0 auto 20px auto;">
+</lord-icon>
+
+
+            <span class="text-bold">Pronto para começar sua jornada no universo cripto?</span> <br>  A gente te mostra o caminho! Confira os passos e comece a investir de um jeito simples e seguro. <br><br> <span class="text-highlight">Caso tenha alguma dúvida, acesse nossa <a href="#" class="link-highlight">central de ajuda</a></span>
+          </p>
+
+          
+          <ul class="instruction-list">
+            <li>
+              <div class="instruction-card">
+                <p class="card-subtitle">Passo 1</p>
+                <h3 class="h3 card-title">Abra sua Conta na Corretora</h3>
+                <p class="card-text">O primeiro passo é criar sua conta em uma corretora de confiança. Assista ao tutorial em vídeo para ver como é simples.</p>
+                <iframe class="instruction-video" src="https://www.youtube.com/watch?v=YlSmlH0SMUI" title="Como abrir uma conta na Binance? | Tutoriais Binance" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"></iframe>
+              </div>
+            </li>
+
+            <li>
+              <div class="instruction-card">
+                <p class="card-subtitle">Passo 2</p>
+                <h3 class="h3 card-title">Verifique sua Identidade (KYC)</h3>
+                <p class="card-text">Após o cadastro, envie seus documentos para verificar e proteger sua conta. Este processo é conhecido como KYC (Conheça Seu Cliente).</p>
+                <iframe class="instruction-video" src="http://www.youtube.com/watch?v=QLPezRnz-SQ" title="Como fazer a verificação de identidade da Binance? | Tutoriais Binance" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"></iframe>
+              </div>
+            </li>
+
+            <li>
+              <div class="instruction-card">
+                <p class="card-subtitle">Passo 3</p>
+                <h3 class="h3 card-title">Como comprar criptomoedas </h3>
+                <p class="card-text">Ao finalizar o cadastro você já pode realizar sua primeira compra de criptomoedas.</p>
+                <iframe class="instruction-video" src="https://www.youtube.com/watch?v=1jSYOvQPy4c" title="Como comprar cripto na Binance? | Tutoriais Binance" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"></iframe>
+              </div>
+            </li>
+
+            <li>
+              <div class="instruction-card">
+                <p class="card-subtitle">Passo 4</p>
+                <h3 class="h3 card-title">Guarde suas criptomoedas com segurança na <br> Guardian Wallet</h3>
+                <p class="card-text">Após realizar a transação, para evitar que o seu dinheiro fique exposto em uma corretora, guarde ele em sua carteira, apenas você terá acesso total a ela, garantindo a segurança necessária para guardar seu patrimônio.</p>
+                <iframe class="instruction-video" src="https://www.youtube.com/embed/VIDEO_ID" title="TUTORIAL BINANCE PARA INICIANTES | COMO INVESTIR EM CRIPTOMOEDAS NA BINANCE?" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"></iframe>
+              </div>
+            </li>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top" data-section>
+      <div class="container">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" width="50" height="50" alt="Logo da Guardian Wallet"> Guardian Wallet
+          </a>
+          <h2 class="footer-title">Conte com a gente! </h2>
+          <a href="tel:+123456789101" class="footer-contact-link">+53 98412-7174</a>
+          <a href="mailto:hello.guardianwallet@gmail.com" class="footer-contact-link">guardianwallet@gmail.com</a>
+          <address class="footer-contact-link">Rua Dom Pedro II, número 901</address>
+        </div>
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Produtos</p></li>
+          <li><a href="#" class="footer-link">Criptomoedas</a></li>
+        </ul>
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Suporte</p></li>
+          <li><a href="#" class="footer-link">Tutoriais</a></li>
+          <li><a href="#" class="footer-link">Central de Ajuda</a></li>
+          <li><a href="#" class="footer-link">Feedback do Usuário</a></li>
+        </ul>
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Sobre Nós</p></li>
+          <li><a href="#" class="footer-link">Sobre a Guardian Wallet</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          © 2025 Guardian Wallet. Todos os Direitos Reservados por <a href="#" class="copyright-link">Senac-RS</a>
+        </p>
+        <ul class="social-list">
+          <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  <script src="./assets/js/script.js" defer></script>
+  <script src="./assets/js/animation-controller.js"></script>
+
+</body>
+</html> 
