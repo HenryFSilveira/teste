@@ -24,7 +24,7 @@
   --cor-branco: hsl(0, 0%, 100%);
   --gradient: linear-gradient(90deg, var(--cor-branco-transparente-10) 0px 77%, var(--cor-branco-transparente-50) 92%, transparent);
   --ff-montserrat: 'Montserrat', sans-serif;
-  --fs-h1: 3.3rem;
+  --fs-h1: 3.0rem;
   --fs-h2: 3rem;
   --fs-h3: 2.4rem;
   --fs-body: 1.6rem;
@@ -466,3 +466,137 @@ address.footer-contact-link { max-width: 30ch; }
   transform: none;
 }
 /* REMOVIDO O '}' EXTRA AQUI */
+
+
+/*-----------------------------------*\
+  #PLANOS
+\*-----------------------------------*/
+
+.plans {
+    padding-block: var(--section-padding);
+    text-align: center;
+    /* Ajustado para garantir que o topo da seção não fique muito perto do header */
+    padding-block-start: 100px; /* Mantém este padding para afastar do header */
+}
+
+/* NOVO ESTILO: Ajusta o título 'Conheça nossos planos' */
+.plans .hero-title {
+    margin-top: 30px; /* Adiciona uma margem superior para empurrar para baixo */
+    margin-bottom: 20px; /* Mantém a margem inferior existente ou ajuste se precisar de mais/menos espaço com o texto */
+}
+
+/* Restante dos estilos da seção PLANOS... */
+
+.plans-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.plan-card {
+    background: linear-gradient(145deg, rgba(24, 23, 23, 0.63), rgba(19, 20, 25, 0.655)); /* Fundo similar ao hero-content */
+    border: 1px solid var(--cor-borda-escura);
+    border-radius: var(--radius-24);
+    padding: 40px 30px;
+    max-width: 380px; /* Largura máxima para cada card */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px); /* Leve elevação ao passar o mouse */
+    box-shadow: 0 15px 30px hsla(0, 0%, 0%, 0.4); /* Sombra mais pronunciada */
+}
+
+.plan-title {
+    margin-bottom: 15px;
+    font-size: var(--fs-h2); /* Ajusta o tamanho do título do plano */
+}
+
+.plan-price {
+    font-size: 2.8rem; /* Tamanho da fonte para o preço/status */
+    font-weight: var(--fw-700);
+    color: var(--cor-branco);
+    background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700); /* Dourado para o preço */
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s linear infinite;
+}
+
+.plan-description {
+    font-size: var(--fs-body);
+    color: var(--cor-texto-claro);
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 40ch;
+    margin-inline: auto; /* Centraliza a descrição */
+}
+
+.plan-description strong {
+    color: var(--cor-amarelo-ativo); /* Destaca o texto em negrito na descrição */
+    font-weight: var(--fw-700);
+}
+
+.plan-features {
+    text-align: left; /* Alinha a lista de recursos à esquerda */
+    width: 100%; /* Ocupa a largura total do card */
+    margin-bottom: 30px;
+}
+
+.plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--cor-branco-neutro);
+    font-size: var(--fs-body);
+    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+}
+
+.plan-features li:last-child {
+    margin-bottom: 0;
+}
+
+.plan-features ion-icon {
+    color: var(--cor-verde-sucesso); /* Cor do ícone de checkmark */
+    font-size: 20px;
+    flex-shrink: 0; /* Previne que o ícone encolha */
+}
+
+
+/* Media Queries para Responsividade */
+@media (min-width: 768px) {
+    .plans-grid {
+        flex-direction: row; /* Em linha para tablets e desktops */
+        flex-wrap: wrap; /* Permite que os cards quebrem a linha */
+        justify-content: center; /* Centraliza os cards */
+    }
+
+    .plan-card {
+        max-width: 45%; /* Reduz a largura para caber dois cards por linha */
+        flex-grow: 1; /* Permite que cresçam para preencher o espaço */
+    }
+}
+
+@media (min-width: 992px) {
+    .plan-card {
+        max-width: 400px; /* Largura ajustada para telas maiores, mantendo-os não muito largos */
+    }
+}
+
+@media (min-width: 1200px) {
+    .plans-grid {
+        gap: 50px; /* Aumenta o espaçamento em telas maiores */
+    }
+    .plan-card {
+        max-width: 480px; /* Ajusta a largura para telas muito grandes, se necessário */
+    }
+}
