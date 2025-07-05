@@ -24,7 +24,7 @@
   --cor-branco: hsl(0, 0%, 100%);
   --gradient: linear-gradient(90deg, var(--cor-branco-transparente-10) 0px 77%, var(--cor-branco-transparente-50) 92%, transparent);
   --ff-montserrat: 'Montserrat', sans-serif;
-  --fs-h1: 3.0rem;
+  --fs-h1: 2.7rem;
   --fs-h2: 3rem;
   --fs-h3: 2.4rem;
   --fs-body: 1.6rem;
@@ -468,15 +468,15 @@ address.footer-contact-link { max-width: 30ch; }
 /* REMOVIDO O '}' EXTRA AQUI */
 
 
+
 /*-----------------------------------*\
   #PLANOS
 \*-----------------------------------*/
 
 .plans {
-    padding-block: var(--section-padding);
-    text-align: center;
-    /* Ajustado para garantir que o topo da seção não fique muito perto do header */
-    padding-block-start: 100px; /* Mantém este padding para afastar do header */
+    padding-block: var(--section-padding); /* Mantém o padding padrão de seção */
+    text-align: center; /* Centraliza o texto dentro da seção */
+    padding-block-start: 100px; /* Adicionado para afastar do cabeçalho */
 }
 
 /* NOVO ESTILO: Ajusta o título 'Conheça nossos planos' */
@@ -485,15 +485,13 @@ address.footer-contact-link { max-width: 30ch; }
     margin-bottom: 20px; /* Mantém a margem inferior existente ou ajuste se precisar de mais/menos espaço com o texto */
 }
 
-/* Restante dos estilos da seção PLANOS... */
-
 .plans-grid {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-top: 50px;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Em coluna para mobile */
+    gap: 30px; /* Espaço entre os cards */
+    margin-top: 50px; /* Espaço acima da grid de planos */
+    justify-content: center; /* Centraliza os itens quando houver espaço */
+    align-items: center; /* Centraliza os itens na coluna */
 }
 
 .plan-card {
@@ -521,34 +519,55 @@ address.footer-contact-link { max-width: 30ch; }
 }
 
 .plan-price {
-    font-size: 2.8rem; /* Tamanho da fonte para o preço/status */
+    font-size: 2.2rem; /* Tamanho base para o conteúdo do preço */
     font-weight: var(--fw-700);
-    color: var(--cor-branco);
-    background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700); /* Dourado para o preço */
-    background-size: 200% auto;
+    color: var(--cor-branco); /* Cor de fallback, será sobrescrita por text-fill-color */
+
+    /* PROPRIEDADES ESSENCIAIS PARA O EFEITO HOLOGRÁFICO DOS SPANS INTERNOS */
+    background-size: 200% auto; /* Necessário para o efeito shimmer */
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shimmer 4s linear infinite;
+
+    /* PROPRIEDADES FLEXBOX PARA ALINHAR AS PARTES DO PREÇO */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: baseline; /* Alinha pela linha de base do texto */
+    gap: 5px; /* Pequeno espaço entre as partes */
+}
+
+/* Garante que os spans com classes holográficas dentro do .plan-price tenham a animação shimmer */
+.plan-price .holographic-title,
+.plan-price .holographic-orange-highlight {
+    animation: shimmer 4s linear infinite; /* Animação de brilho para os textos holográficos */
+    /* Estas classes já definem background e text-fill-color globalmente */
+    /* Garante que o font-size e font-weight sejam aplicados, se não vierem do .plan-price */
+    font-size: 2.2rem; /* Mantém o tamanho do valor principal */
+    font-weight: var(--fw-700); /* Mantém o peso */
+}
+
+/* NOVO ESTILO: Para o "/mês" em branco opaco */
+.price-suffix {
+    color: var(--cor-branco-transparente-50); /* Branco opaco */
+    font-size: 1.7rem; /* Tamanho menor para o "/mês" */
+    font-weight: var(--fw-500); /* Peso da fonte mais leve */
+    display: inline-block;
+    /* Adicione esta linha para garantir que o texto não fique transparente */
+    -webkit-text-fill-color: var(--cor-branco-transparente-50); /* Garante que a cor seja aplicada */
 }
 
 .plan-description {
-    font-size: var(--fs-body);
-    color: var(--cor-texto-claro);
-    line-height: 1.6;
     margin-bottom: 30px;
-    max-width: 40ch;
-    margin-inline: auto; /* Centraliza a descrição */
 }
 
 .plan-description strong {
-    color: var(--cor-amarelo-ativo); /* Destaca o texto em negrito na descrição */
+    color: var(--cor-amarelo-ativo);
     font-weight: var(--fw-700);
 }
 
 .plan-features {
-    text-align: left; /* Alinha a lista de recursos à esquerda */
-    width: 100%; /* Ocupa a largura total do card */
+    width: max-content;
+    margin-inline: auto;
     margin-bottom: 30px;
 }
 
@@ -558,7 +577,7 @@ address.footer-contact-link { max-width: 30ch; }
     gap: 10px;
     color: var(--cor-branco-neutro);
     font-size: var(--fs-body);
-    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+    margin-bottom: 10px;
 }
 
 .plan-features li:last-child {
@@ -566,37 +585,360 @@ address.footer-contact-link { max-width: 30ch; }
 }
 
 .plan-features ion-icon {
-    color: var(--cor-verde-sucesso); /* Cor do ícone de checkmark */
+    color: var(--cor-verde-sucesso);
     font-size: 20px;
-    flex-shrink: 0; /* Previne que o ícone encolha */
+    flex-shrink: 0;
 }
 
+.btn-premium-orange {
+  position: relative;
+  background: linear-gradient(90deg, #FF9900, #FFB300, #FF8000, #FFCC00, #FF9900);
+  background-size: 200% auto;
+  animation: shimmer 8s linear infinite;
+  max-width: max-content;
+  font-weight: var(--fw-700);
+  padding: 13px 30px;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0 0 10px hsla(41, 95%, 61%, 0.3), 0 0 20px hsla(41, 95%, 61%, 0.15);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-inline: auto;
+  color: var(--cor-branco-neutro);
+}
+
+.btn-premium-orange:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px hsla(41, 95%, 61%, 0.4), 0 0 30px hsla(41, 95%, 61%, 0.2), 0 0 50px hsla(41, 95%, 61%, 0.1);
+}
 
 /* Media Queries para Responsividade */
 @media (min-width: 768px) {
     .plans-grid {
-        flex-direction: row; /* Em linha para tablets e desktops */
-        flex-wrap: wrap; /* Permite que os cards quebrem a linha */
-        justify-content: center; /* Centraliza os cards */
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .plan-card {
-        max-width: 45%; /* Reduz a largura para caber dois cards por linha */
-        flex-grow: 1; /* Permite que cresçam para preencher o espaço */
+        max-width: 45%;
+        flex-grow: 1;
     }
 }
 
 @media (min-width: 992px) {
     .plan-card {
-        max-width: 400px; /* Largura ajustada para telas maiores, mantendo-os não muito largos */
+        max-width: 400px;
     }
 }
 
 @media (min-width: 1200px) {
     .plans-grid {
-        gap: 50px; /* Aumenta o espaçamento em telas maiores */
+        gap: 50px;
     }
     .plan-card {
-        max-width: 480px; /* Ajusta a largura para telas muito grandes, se necessário */
+        max-width: 480px;
+    }
+}
+
+/*-----------------------------------*\
+  #CENTRAL DE AJUDA
+\*-----------------------------------*/
+
+.help-center {
+    padding-block: var(--section-padding);
+    padding-block-start: 100px; /* Para afastar do header fixo */
+    text-align: center; /* Centraliza todo o texto e elementos inline/inline-block */
+}
+
+/* Reutilizando hero-title e hero-text para manter a consistência do topo da página */
+.help-center .hero-title {
+    margin-bottom: 20px; /* Espaço abaixo do título principal */
+    /* font-size já vem de .h1 */
+}
+
+.help-center .hero-text {
+    max-width: 65ch; /* Limita a largura para melhor legibilidade */
+    margin-inline: auto; /* Centraliza o parágrafo */
+    margin-bottom: 50px; /* Espaço antes da próxima seção */
+    /* font-size, color, line-height já vêm de .hero-text global */
+}
+
+.faq-section,
+.contact-section {
+    background: linear-gradient(145deg, rgba(24, 23, 23, 0.63), rgba(19, 20, 25, 0.655)); /* Fundo similar aos cards de plano */
+    border: 1px solid var(--cor-borda-escura);
+    border-radius: var(--radius-24);
+    padding: 40px;
+    margin-bottom: 50px; /* Espaço entre as seções FAQ e Contato, e antes do footer */
+    margin-inline: auto; /* Centraliza a seção em si */
+    max-width: 800px; /* Limita a largura das seções internas */
+    text-align: center; /* Garante que os títulos internos e blocos se centralizem */
+}
+
+.faq-section .h2,
+.contact-section .h2 {
+    margin-bottom: 30px; /* Espaço abaixo dos subtítulos */
+    /* As cores holográficas já vêm das classes aplicadas no HTML */
+}
+
+.faq-list {
+    max-width: 700px; /* Limita a largura da lista de FAQs para melhor leitura */
+    margin-inline: auto; /* Centraliza a lista de FAQs */
+    text-align: left; /* Garante que o conteúdo dos itens FAQ fique alinhado à esquerda dentro da lista */
+}
+
+.faq-item {
+    background-color: hsla(225, 15%, 16%, 0.7); /* Fundo sutil para cada item de FAQ */
+    border-radius: var(--radius-12);
+    padding: 20px;
+    margin-bottom: 15px; /* Espaço entre os itens FAQ */
+    cursor: pointer; /* Indica que é clicável (para futura funcionalidade de expandir/contrair) */
+    transition: background-color var(--transition-1);
+    /* Removido text-align: left; daqui, pois faq-list já define */
+}
+
+.faq-item:last-child {
+    margin-bottom: 0; /* Remove margem do último item */
+}
+
+.faq-item:hover {
+    background-color: hsla(225, 15%, 16%, 1); /* Escurece no hover */
+}
+
+.faq-question {
+    color: var(--cor-branco);
+    font-size: var(--fs-h3); /* Tamanho do h3 */
+    margin-bottom: 10px; /* Espaço entre pergunta e resposta */
+    text-align: center; /* Adicionado para centralizar o título da pergunta */
+}
+ 
+.faq-answer {
+    color: var(--cor-texto-claro);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    /* max-width e margin-inline já vêm de .section-text */
+    text-align: center; /* Alterado para centralizar a resposta também */
+}
+
+
+/* Estilos para o formulário de contato */
+.contact-form {
+    display: grid;
+    gap: 20px; /* Espaço entre os campos do formulário */
+    max-width: 500px; /* Limita a largura do formulário */
+    margin-inline: auto; /* Centraliza o formulário */
+    text-align: left; /* Garante que os labels/placeholders fiquem alinhados à esquerda dentro do form */
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: hsla(225, 15%, 16%, 0.7);
+    border: 1px solid var(--cor-borda-escura);
+    border-radius: var(--radius-12);
+    color: var(--cor-branco-neutro);
+    font-size: var(--fs-body);
+    outline: none;
+    transition: border-color var(--transition-1);
+}
+
+.input-field:focus {
+    border-color: var(--cor-azul-primario);
+}
+
+.input-field::placeholder {
+    color: var(--cor-texto-secundario);
+}
+
+.textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 120px;
+    max-height: 250px;
+}
+
+.contact-form .btn-primary {
+    width: max-content; /* Faz o botão ajustar ao conteúdo */
+    margin-top: 20px; /* Margem acima do botão */
+    margin-bottom: 0; /* Remove margem inferior padrão se houver */
+    margin-inline: auto; /* Centraliza o botão */
+}
+
+/* -----------------------------------*
+  #MODAL DE SUCESSO
+*------------------------------------*/
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que fique acima de todo o conteúdo */
+    opacity: 0; /* Começa invisível */
+    visibility: hidden; /* Esconde do fluxo do documento */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1; /* Torna visível */
+    visibility: visible; /* Torna clicável */
+}
+
+.modal-content {
+    background: linear-gradient(145deg, rgba(24, 23, 23, 0.9), rgba(19, 20, 25, 0.9)); /* Fundo do modal */
+    border: 1px solid var(--cor-borda-escura);
+    border-radius: var(--radius-24);
+    padding: 40px;
+    text-align: center;
+    max-width: 400px; /* Largura máxima do modal */
+    width: 90%; /* Responsividade */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
+    transform: translateY(-20px) scale(0.95); /* Começa um pouco acima e menor */
+    opacity: 0; /* Começa invisível para a animação de entrada */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1); /* Posição final e tamanho normal */
+    opacity: 1; /* Torna visível */
+}
+
+.modal-content lord-icon {
+    margin-inline: auto;
+    margin-bottom: 20px;
+}
+
+.modal-title {
+    font-size: var(--fs-h3);
+    margin-bottom: 10px;
+}
+
+.modal-text {
+    font-size: var(--fs-body);
+    color: var(--cor-texto-claro);
+    margin-bottom: 30px;
+}
+
+.modal-close-btn {
+    /* Reutiliza o estilo do .btn-primary */
+    padding: 10px 25px; /* Ajuste o padding se necessário */
+    margin-top: 0; /* Remove a margem superior extra do btn-primary */
+    margin-bottom: 0; /* Remove a margem inferior extra do btn-primary */
+}
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 767px) {
+    .faq-section,
+    .contact-section {
+        padding: 25px; /* Reduz padding em telas menores */
+    }
+}
+@media (min-width: 768px) {
+    .faq-section,
+    .contact-section {
+        padding: 50px; /* Aumenta padding em telas maiores */
+    }
+}
+
+/*-----------------------------------*\
+  #SEÇÃO CRIE SUA CARTEIRA
+\*-----------------------------------*/
+
+.instruction-figure {
+    margin: 30px auto; /* Centraliza a figura e adiciona margem */
+    max-width: 70%; /* Largura máxima da figura, para coincidir com a imagem */
+    text-align: center; /* Centraliza o figcaption */
+}
+
+.instruction-figcaption {
+    font-size: var(--fs-small); /* Tamanho menor para a legenda */
+    color: var(--cor-texto-secundario); /* Cor mais discreta para a legenda */
+    margin-top: 10px; /* Espaço entre a imagem e a legenda */
+}
+
+.help-center .instruction-image {
+    max-width: 100%; /* A imagem preenche a figura */
+    border: 2px solid var(--cor-azul-primario);
+    box-shadow: 0 0 15px hsla(222, 100%, 61%, 0.4), 0 0 30px hsla(222, 100%, 61%, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: block; /* Garante que a imagem se comporte como bloco */
+    margin-inline: auto; /* Centraliza a imagem dentro da figura */
+}
+
+.help-center .instruction-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px hsla(222, 100%, 61%, 0.6), 0 0 40px hsla(222, 100%, 61%, 0.3);
+}
+
+.faq-list .faq-item {
+    padding: 30px;
+    background: linear-gradient(145deg, rgba(14, 13, 13, 0.7), rgba(19, 20, 25, 0.75));
+}
+
+.faq-list .faq-item:hover {
+    background-color: hsla(225, 15%, 16%, 0.9);
+}
+
+.faq-list .faq-item .faq-question {
+    color: var(--cor-amarelo-ativo);
+    font-size: var(--fs-h3);
+}
+
+.faq-list .faq-item .faq-answer {
+    color: var(--cor-branco-neutro);
+    font-size: 1.7rem;
+    line-height: 1.6;
+}
+
+/* Ajustes para a lista de funcionalidades dentro do tutorial */
+.faq-item .plan-features {
+    text-align: left;
+    padding-inline-start: 0;
+    max-width: 400px; /* Mantém um max-width para a lista */
+    margin-inline: auto; /* Centraliza a lista completa de features */
+}
+
+.faq-item .plan-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: var(--fs-body);
+    line-height: 1.5;
+}
+
+.faq-item .plan-features li:last-child {
+    margin-bottom: 0;
+}
+
+.faq-item .plan-features li ion-icon {
+    font-size: 24px;
+    color: var(--cor-verde-sucesso);
+    margin-top: 2px;
+}
+
+/* Media Queries para responsividade das imagens no tutorial */
+@media (max-width: 767px) {
+    .instruction-figure {
+        max-width: 95%; /* Figura maior em telas menores */
+    }
+}
+
+@media (min-width: 992px) {
+    .faq-list {
+        max-width: 900px;
     }
 }

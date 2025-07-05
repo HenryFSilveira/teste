@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardian Wallet - Central de Ajuda</title> <link rel="shortcut icon" href="./favicon.png" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="header" data-header>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="./assets/images/logo.png" width="32" height="32" alt="Logo da Guardian Wallet">
+        <strong>Guardian</strong><span class="wallet-text"> Wallet</span>
+      </a>
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li class="navbar-item"><a href="index.html" class="navbar-link" data-nav-link>Página Inicial</a></li>
+          <li class="navbar-item"><a href="criesuacarteira.html" class="navbar-link" data-nav-link>Crie sua carteira</a></li>
+          <li class="navbar-item"><a href="planos.html" class="navbar-link" data-nav-link>Planos</a></li>
+          <li class="navbar-item"><a href="central-de-ajuda.html" class="navbar-link active" data-nav-link>Central de ajuda</a></li> </ul>
+      </nav>
+      <button class="nav-toggle-btn" aria-label="Alternar menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+      <a href="http://localhost:5173" class="btn btn-outline">Carteira</a>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <section class="section help-center" aria-label="Central de Ajuda" data-section style="padding-block-start: 100px;">
+        <div class="container">
+          <h1 class="h1 hero-title">Central de Ajuda</h1>
+          <p class="hero-text">
+            Encontre as respostas para suas perguntas mais frequentes ou entre em contato com nosso suporte.
+          </p>
+
+          <div class="faq-section">
+            <h2 class="h2 holographic-orange-highlight" style="margin-bottom: 30px;">Perguntas Frequentes (FAQ)</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3 class="h3 faq-question">O que é a Guardian Wallet?</h3>
+                <p class="section-text faq-answer">
+                  A Guardian Wallet é uma plataforma segura e intuitiva que simplifica o mundo das criptomoedas, permitindo que você aprenda, invista e gerencie seus ativos digitais com facilidade e confiança.
+                </p>
+              </div>
+              <div class="faq-item">
+                <h3 class="h3 faq-question">Como posso criar minha carteira?</h3>
+                <p class="section-text faq-answer">
+                  Você pode criar sua carteira seguindo alguns passos simples em nossa seção "Crie sua carteira". O processo é guiado e seguro para garantir a proteção dos seus ativos desde o início.
+                </p>
+              </div>
+              <div class="faq-item">
+                <h3 class="h3 faq-question">Quais são os planos disponíveis?</h3>
+                <p class="section-text faq-answer">
+                  Oferecemos o Plano Básico (gratuito), com análise geral do mercado e o Plano Premium (R$19,99/mês), com consultoria personalizada e suporte de especialistas. Você pode conferir os detalhes na nossa seção "Planos".
+                </p>
+              </div>
+              </div>
+          </div>
+
+          <div class="contact-section">
+            <h2 class="h2 holographic-title" style="margin-top: 50px; margin-bottom: 30px;">Ainda precisa de ajuda?</h2>
+            <p class="section-text" style="margin-bottom: 30px;">
+              Preencha o formulário abaixo e nossa equipe de suporte entrará em contato com você o mais breve possível.
+            </p>
+            <form action="#" method="POST" class="contact-form" id="contactForm"> <div class="input-wrapper">
+                <input type="text" name="name" placeholder="Seu Nome Completo" required class="input-field">
+              </div>
+              <div class="input-wrapper">
+               <input type="email" name="email" placeholder="Seu E-mail" required class="input-field" id="emailField">
+              </div>
+              <div class="input-wrapper">
+                <textarea name="message" placeholder="Sua Mensagem" required class="input-field textarea"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary"><span class="btn-text">Enviar Mensagem</span></button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top" data-section>
+      <div class="container">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="./assets/images/logo.png" width="50" height="50" alt="Logo da Guardian Wallet"> Guardian Wallet
+          </a>
+          <h2 class="footer-title">Conte com a gente! </h2>
+          <a href="tel:+123456789101" class="footer-contact-link">+53 98412-7174</a>
+          <a href="mailto:hello.guardianwallet@gmail.com" class="footer-contact-link">guardianwallet@gmail.com</a>
+          <address class="footer-contact-link">Rua Dom Pedro II, número 901</address>
+        </div>
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Produtos</p></li>
+          <li><a href="#" class="footer-link">Criptomoedas</a></li>
+        </ul>
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Suporte</p></li>
+          <li><a href="central-de-ajuda.html" class="footer-link">Central de Ajuda</a></li> <li><a href="#" class="footer-link">Tutoriais</a></li>
+          <li><a href="#" class="footer-link">Feedback do Usuário</a></li>
+        </ul>
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Sobre Nós</p></li>
+          <li><a href="centraldeajuda.html" class="footer-link">Sobre a Guardian Wallet</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          © 2025 Guardian Wallet. Todos os Direitos Reservados por <a href="#" class="copyright-link">Senac-RS</a>
+        </p>
+        <ul class="social-list">
+          <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-content">
+      <lord-icon
+          src="https://cdn.lordicon.com/lupuorrc.json"
+          trigger="loop"
+         colors="primary:#007bff,secondary:#ADD8E6"
+          style="width:100px;height:100px">
+      </lord-icon>
+    <h3 class="modal-title holographic-title">Mensagem Enviada!</h3> <p class="modal-text">Agradecemos o seu contato.<br> Em breve nossa equipe retornará!</p>
+      <button class="btn btn-primary modal-close-btn" id="closeModalBtn"><span class="btn-text">Fechar</span></button>
+    </div>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+ <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/animation-controller.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const emailField = document.getElementById('emailField');
+
+      if (emailField) {
+        // Quando o campo for considerado inválido (ex: falta @)
+        emailField.addEventListener('invalid', () => {
+          if (emailField.validity.valueMissing) { // Se o campo estiver vazio
+            emailField.setCustomValidity("Por favor, preencha seu e-mail.");
+          } else if (emailField.validity.typeMismatch) { // Se o formato do e-mail estiver incorreto
+            emailField.setCustomValidity("Por favor, insira um endereço de e-mail válido (ex: seuemail@dominio.com).");
+          } else if (emailField.validity.patternMismatch) { // Se você usar um 'pattern' (regex) e não corresponder
+             emailField.setCustomValidity("Por favor, insira um endereço de e-mail válido.");
+          }
+        });
+
+        // Quando o usuário começa a digitar ou corrige a entrada, limpa a mensagem de erro personalizada
+        emailField.addEventListener('input', () => {
+          emailField.setCustomValidity(""); // Limpa a mensagem personalizada para que a validação padrão possa ocorrer novamente
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
